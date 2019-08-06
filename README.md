@@ -1,5 +1,5 @@
 # Conformer
-![Conformer Logo](https://raw.github.com/jskrwc/conformer/conformer_logo.png)
+![Conformer Logo](https://github.com/jskrwc/conformer/conformer_logo.png)
 
 By [knopf.io/)
 
@@ -52,12 +52,12 @@ The following table shows the available methods in the gem, some sample input an
 Method             | Sample inputs                                   | Output                    | Notes
 -------------------|-------------------------------------------------|---------------------------|-----------
 conform_ssn()      | '123456789', '123-45-6789', '123 45 6789'       | `'123456789'`             | works for ITIN's too
-                   | '12789', 'asf-DE-fd12', '123-456-7899'                    | `'error'`                 |
+                   | '12789', 'asf-DE-fd12', '123-456-7899'                    | `'error'`       |
 conform\_s\_s\_n() | '123456789', '123-45-6789', '123 45 6789'       | `'123-45-6789'` or `'error'`| works for ITIN's too
                    | '12789', 'asf-DE-fd12', '123-456-7899'          | `'error'`                 |
-is_ssn()           | '123456789', '123-45-6789', '123 45 6789'       | `true`
+is_ssn()           | '123456789', '123-45-6789', '123 45 6789'       | `true`                    |
 					  |  '000-12-3456', '12-00-3456' '912-75-5678'       | 'false'   _# these are not valid SSN's_ | nb. returns false for ITIN's
-is_itin()           | '987-78-4321', '901-82-1234'                    | `true`
+is_itin()           | '987-78-4321', '901-82-1234'                    | `true`|
 					  |  '000-12-3456', '12-00-3456' '912-34-5678'       | 'false'   _# these are not valid ITIN's_|					  
 conform_ein()      | '123456789', '123-45-6789', '123 45 6789'       | `'123456789'`   or `'error'`|
 conform\_ei\_n()   | '123456789', '123-45-6789', '123 45 6789'       | `'12-3456789'` or `'error'`|
