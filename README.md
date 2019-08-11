@@ -1,6 +1,5 @@
 # Conformer
-![Conformer Logo](https://github.com/jskrwc/conformer/conformer_logo.png)
-
+![Conformer Logo](https://github.com/jskrwc/Conformer/blob/master/conformer_logo.png)
 By [knopf.io/)
 
 A tool for normalizing and formatting various data in rails.
@@ -61,7 +60,8 @@ is_itin()          | '987-78-4321', '901-82-1234'                    | `true`   
                    |  '000-12-3456', '12-00-3456' '912-34-5678'      | 'false'                   |
 conform_ein()      | '123456789', '123-45-6789', '123 45 6789'       | `'123456789'` or `'error'`|
 conform\_ei\_n()   | '123456789', '123-45-6789', '123 45 6789'       | `'12-3456789'`or `'error'`|
-
+conform_phone()    | '1 800-CALL-You', '202.555.1212', etc           | '123-456-7890' or ``'error'`| nb. removes leading '1', translated letters to numbers
+ 
 ---
 
 

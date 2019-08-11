@@ -5,7 +5,7 @@ class Conformer
   include HTTParty
 
 
-# NOTE:  data is string
+# NOTE:  pass a string to methods
 
   # convert SSN/ITIN w 123456789 format
   def conform_ssn(n)
@@ -49,6 +49,20 @@ class Conformer
   def conform_ei_n(n)
     n = conform_ein(n)
     n.insert(2,'-')
+  end
+
+
+  # convert phone number to 123-456-7890 format
+  #  *NOTE converts letters to #'s';  removes leading "1"
+  def conform_phone(n)
+    n = n.upcase.tr('ABCDEFGHIJKLMNOPQRSTUVWXYZ','22233344455566677778889999')
+    n = n.gsub(/[^0-9]/ ,"")
+    n[0] = "" if n[0] == '1'
+    if n.length != 10
+      return "error"
+    else
+      return n.insert(3,'-').insert(-5,'-')
+    end
   end
 
 
