@@ -1,9 +1,7 @@
 require 'httparty'
+require 'conformer/abbreviations'
 
-
-class Conformer
-  include HTTParty
-
+module Conformer
 
 # NOTE:  pass a string to methods
 

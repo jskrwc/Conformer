@@ -1,12 +1,11 @@
 # Conformer
-![Conformer Logo](https://github.com/jskrwc/Conformer/blob/master/conformer_logo.png)
+![Conformer Logo](https://github.com/jskrwc/Conformer/blob/master/Conformer_Logo.png)
 By [knopf.io/)
 
-A tool for normalizing and formatting various data in rails.
-**Conformer** is ruby gem that conforms various data. The gem will normalize various data to standardized formats. Eg. SSN, date, name, phone numbers, addresses, email etc. Will format, and in some cases validate (link to online data, or incorporate standard parameters (e.g. domain name has a valid root, or SSN has valid prefix).
 
-**Conformer** aims to be as flexible tool to help normalize various data to standardized formats.  Eg. SSN, date, name, phone numbers, addresses, email etc. Will format, and in some case validate (link to online or other data) e.g. domain plausible.
-The basic goal of **Conformer** is to take care of the some of the mundane formatting problems that frequently arise.  Rather than continuously reinventing the wheel (or spending time googling the wheel), common data formatting issues can be aggregated here.  
+**Conformer** is intended to be a flexible tool to help normalize various data to standardized formats.  Eg. SSN, date, name, phone numbers, addresses, email etc. It will format, and in some case validate data (by referencing online sources or incoporating standard parameters e.g. domain name has a valid root, or SSN has valid prefix).
+
+The basic goal of **Conformer** is to take care of the many of the mundane formatting issues that frequently arise.  Rather than continuously reinventing the wheel (or spending time googling the wheel), useful and common data formatting methods can be aggregated here.  
 
 
 ## Installation
@@ -26,9 +25,9 @@ bundle install
 
 ## Usage
 
-**Conformer** is essentially a collection of methods.  Call the methods on the data you wish to format, and it will be returned in that particular format.  The method nomenclature is hopefully useful, and often sufficient to see what will be returned. Methods are named with form **conform-_methodname_**
+**Conformer** is essentially a collection of methods.  Call the methods on the data you wish to format, and the data will be returned in that particular format.  The method nomenclature is hopefully useful, and often sufficient to inform what will be returned. Methods are named with form **conform-_methodname_**
 
-For example, the method `conform_ssn(input)` will return `'123456789'`
+For example, the method `conform_ssn(input)` will return  `'123456789'`
 
 for inputs of `123-45-6789`, `123.45.6789`, `123 45 6789` etc...`
 
@@ -77,7 +76,7 @@ If you discover any bugs, feel free to create an issue on GitHub. Please add as 
 possible to help us in fixing the potential bug. We also encourage you to help even more by forking and
 sending us a pull request.
 
-https://github.com/plataformatec/simple_form/issues
+https://github.com/jskrwc/conformer/issues
 
 ## Maintainers
 
