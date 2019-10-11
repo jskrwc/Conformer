@@ -39,7 +39,7 @@ Similarly, the method `conform_s_s_n(input)` will return `'123-45-6789'` for tho
 
 To start using **Conformer** you just have to call the desired method passing a single string argument
 
-By default, all arguments are a single string
+By default, all arguments are a single _string_.
 
 
 
@@ -51,21 +51,26 @@ The following table shows the available methods in the gem, some sample input an
 Method             | Sample inputs                                   | Output                    | Notes
 -------------------|-------------------------------------------------|---------------------------|----------------------
 conform_ssn()      | '123456789', '123-45-6789', '123 45 6789'       | `'123456789'`             | works for ITIN's too
-conform_ssn()      | '12789', 'asf-DE-fd12', '123-456-7899'          | `'error'`                 |  
-conform\_s\_s\_n() | '123456789', '123-45-6789', '123 45 6789'       | `'123-45-6789'` or `'err'`| works for ITIN's too
-conform\_s\_s\_n() | '12789', 'asf-DE-fd12', '123-456-7899'          | `'error'`                 |
+conform_ssn()      | '12789', 'asf-DE-fd12', '123-456-7899'          | `ERRORMESSAGE`            |  
+conform\_s\_s\_n() | '123456789', '123-45-6789', '123 45 6789'       | `'123-45-6789'`           | works for ITIN's too
+conform\_s\_s\_n() | '12789', 'asf-DE-fd12', '123-456-7899'          | `ERRORMESSAGE`            |
 is_ssn()           | '123456789', '123-45-6789', '123 45 6789'       | `true`                    |
 is_ssn()           |  '000-12-3456', '12-00-3456' '912-75-5678'      | `false`                   | nb. returns false for ITIN's
 is_itin()          | '987-78-4321', '901-82-1234'                    | `true`                    |
 is_itin()          |  '000-12-3456', '12-00-3456' '912-34-5678'      | `false`                   |
-conform_ein()      | '123456789', '123-45-6789', '123 45 6789'       | `'123456789'` or `'error'`|
-conform\_ei\_n()   | '123456789', '123-45-6789', '123 45 6789'       | `'12-3456789'`or `'error'`|
-conform_phone()    | '1 800-CALL-You', '202.555.1212', etc           | '123-456-7890' or ``'error'`| nb. removes leading '1', translated letters to numbers
-
+conform_ein()      | '123456789', '123-45-6789', '123 45 6789'       | `'123456789'`             |
+conform\_ei\_n()   | '123456789', '123-45-6789', '123 45 6789'       | `'12-3456789'`            |
+conform_phone()    | '1 800-CALL-NOW', '202.555.1212', etc           | `'800-225-5669'` `202-555-1212`| nb. removes leading '1', translates letters to numbers
+state_name_fr_abbr | 'AZ', 'GU'                                      | `'Arizona'` `'Guam'`      |
+st_abbr_fr_name    | 'California', 'iowa', 'Marshall Islands'        | `'CA'` `'IA'` `'MH'`      |
+month_fr_num()     | '3', '5', '12'                                  | `March` `May` `December`  |
+month_num_fr_month | 'January', 'October'                            | `'1'` `'10'`              |
+month_fr_mo        | 'Sep', 'Sep.', 'Sept.', 'Sept', 'sep'           | `'September'`             |
 ---
 
 
-
+Note: invalid inputs are returned as "ERRORMESSAGE" - which can be customized.  The default is "INVALID INPUT"
+This gem is intended to be generically useful -- validation/exceptions are better raised and handled in the program utilizing this gem as appropriate for the specific needs of that program)
 
 
 
